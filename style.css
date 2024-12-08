@@ -9,8 +9,7 @@
 body{
     font-family:(var(--font-primary));
     h1,
-    h2,
-    h3{
+    h2{
         font-family:(var(--font-heading));
     }
     margin:0;
@@ -69,6 +68,9 @@ body{
         };
        
     }
+    img{
+        width: 100%; ;
+    }
 
 }
 #aventure{
@@ -91,25 +93,152 @@ body{
         li::before{
             content:"0" counter(aventure);
             font-family: (var(--font-heading));
-            color:rgba(50, 49, 49, 0.33) ;
+            color:rgba(73, 51, 51, 0.33) ;
             font-size:70px;
             position:absolute;
             top: 0;
         }
     }
 }
+#Community{
+
+    border: 1px solid rgb(28, 22, 22) ;
+    text-align: center;
+    padding:0 30px;
+    margin-top: 50px;
+    ul{
+        margin-top:50px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        list-style: none;
+        row-gap:30px;
+        li{
+            h3{
+                margin-bottom: 0;
+            }
+            width:40%;
+            img{
+                width:100%;
+                aspect-ratio: 1/1;
+                object-fit: cover;
+                border-radius:50%;
+            }
+        }
+    }
+}
+#meeting{
+    margin-top: 50px;
+}
+.btn{
+    font-family: var(--font-heading);
+    padding: 10px 20px;
+    &.transparent{
+        border:2px solid white;
+        &:hover{
+            background-color: rgba(255, 255, 255, 0.132);
+        }
+    }
+}
+footer{
+    margin-top: 50px;
+    article{
+        color: white;
+        padding:100px 0 150px;
+        background-image:linear-gradient( to bottom,rgba(40, 28, 28, 0.693),rgba(33, 24, 24, 0.561)),
+         url("img/gandalf.jpg");
+        background-size: cover  ;
+        background-position:center;
+        text-align: center;
+        a{
+            color:white;
+            text-decoration: none;
+        }
+    
+    }
+    aside{
+        background-color:rgb(61, 5, 5);
+        padding:30px 0;
+        ul{
+            a{
+                color:white;
+                text-decoration: none;
+            }
+            list-style:none;
+        }
+        img{
+            width:100px;
+        }
+        nav{
+            display: flex;
+            justify-content: space-between
+        };
+        p{
+            color:white
+        }
+    }
+}
 @media(min-width:768px){
+    footer{
+        article{
+            background-image:linear-gradient(to right,rgba(255, 255, 255, 0.186),rgba(58, 53, 53, 0.696)),
+        url("img/gandalf.jpg");
+        }
+        
+    }
     header{
         background-position:center;
     }
     #aventure{
+        h2{
+            text-align: center;
+        }
         ol{
             display: flex;
-            gap:50px;
+            gap:80px;
+            align-items: center;
+            list-style:none;
+        counter-reset: aventure;
+        li{
+            counter-increment:aventure;
+            position: relative;
+            h3{
+                padding-top: 10px;
+                margin-left: 5px;
+            }
+        }
+        li::before{
+            content:"0" counter(aventure);
+            font-family: (var(--font-heading));
+            color:rgba(73, 51, 51, 0.33) ;
+            font-size:60px;
+            position:absolute;
+            top: 0;
+            
+        }
         }
         li h3{
             padding-top: 20px;
         }
-        
+    padding-right:120px;
     }
+    #Community{
+        margin-right:120px;
+        ul li{
+            width:30%;
+        }
+        
+
+    }
+    #meeting{
+        display:flex;
+        align-items: center;
+        gap:30px;
+        img{
+            width: 30%;
+            aspect-ratio:5/4;
+            object-fit: cover;
+        }
+    }
+
 }
